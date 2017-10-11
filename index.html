@@ -3,24 +3,37 @@
   <head>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <link rel="stylesheet" href="uikit.min.css" />
-    <script src="jquery.js"></script>
+    <script src="jquery-3.2.1.js"></script>
     <script src="uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
   </head>
   <body>
-    <div class ="page" id="name">
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+    <div class="uk-navbar-center">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#currentwork">Current Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </div>
+    </nav>
+    <div class ="uk-section-xlarge uk-section-muted" id="name">
+      <h1>Allan Garcia-Zych</h1>
+      <h2>MIT Class of 2021</h2>
+      <p>
+        <a href="carrie.html">Link</a>
+      </p>
+    </div>
+    <div class ="uk-section-xlarge uk-section-primary" id="resume">
       <h1>Allan Garcia-Zych</h1>
       <p>
         <a href="carrie.html">Link</a>
       </p>
     </div>
-    <div class ="page" id="resume">
-      <h1>Allan Garcia-Zych</h1>
-      <p>
-        <a href="carrie.html">Link</a>
-      </p>
-    </div>
-    <div class ="page" id="currentwork">
+    <div class ="uk-section-xlarge uk-section-secondary" id="currentwork">
       <h1>Allan Garcia-Zych</h1>
       <p>
         <a href="carrie.html">Link</a>
