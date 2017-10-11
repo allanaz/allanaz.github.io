@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="uikit.min.css" />
+    <script src="jquery-3.2.1.js"></script>
+    <script src="uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
   </head>
   <body>
     <h1>Carrie Zuckerman</h1>
+    <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: 2017-11-22T23:30:00-07:00">
+    <div>
+        <div class="uk-countdown-number uk-countdown-days"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+    </div>
+    <div class="uk-countdown-separator">:</div>
+    <div>
+        <div class="uk-countdown-number uk-countdown-hours"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+    </div>
+    <div class="uk-countdown-separator">:</div>
+    <div>
+        <div class="uk-countdown-number uk-countdown-minutes"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+    </div>
+    <div class="uk-countdown-separator">:</div>
+    <div>
+        <div class="uk-countdown-number uk-countdown-seconds"></div>
+        <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+    </div>
+</div>
   </body>
 </html>
