@@ -2,11 +2,15 @@
   margin:0;
   padding: 0;
 }
-h1, p, h2{
+h1, h2, p, h3{
   font-family: Helvetica;
   text-align: center;
 
 }
+p{
+  font-style: italic;
+}
+
 .page{
   height: 100vh;
   width: 100vw;
