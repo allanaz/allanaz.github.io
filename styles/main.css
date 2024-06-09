@@ -1,35 +1,36 @@
 
 html, body {
-  margin:0;
-  height:100%;
+  background-color: #81b29a
 }
 
-.bg-container{
-  width:100%;
-  height:100%;
-  border:1px solid black;
-  box-sizing:border-box;
-  background-image: url("palomarComet.png");
-  background-color: #cccccc;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+#bio {
+  margin-top: 200px;
+  margin-left: 20px;
+  width: 75%;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 48px;
+  line-height: 1em;
 }
-
-h1 {
-  font-family: 'Comfortaa', cursive;
-  font-size: 72px;
-  color: white;
+#job {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 24px;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: #343a40;
 }
-p {
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  width: 50%;
-  margin: auto;
-  line-height: 1.6
+#connect {
+  font-family: "Nunito Sans", sans-serif;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 24px;
 }
-
-#name_about{
-  text-align: center;
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+#connect a:hover{
+  margin-top: -3px;
 }
