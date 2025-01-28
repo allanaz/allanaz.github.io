@@ -1,61 +1,72 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
 
 html, body {
-  background-color: #81b29a
+  background-color: #81b29a;
+  height: 100%;
+  margin: 0;
 }
+
 img {
   object-fit: cover;
   width: 100%;
-  vertical-align: middle;
+  border-radius: 50%;
 }
 
 #landing {
   display: flex;
-  width: 90%;
-  height: auto;
+  align-items: stretch;
+  row-gap: 20px;
+  width: 75%;
+  height: 85%;
   padding-left: 5%;
-  padding-right: 5%;
+  padding-right: 20%;
+  padding-top: 5%;
 }
 
 #profilePhoto {
-  flex-basis: 33%;
-  margin: auto;
-  margin-top: 150px;
+  margin-top: 0;
+  min-width: 0;
+}
 
+#profile {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 #information {
-  flex-basis: 67%;
-  margin: auto auto auto 0;
+  flex: 4 1 800px;
+  margin-left: 20px
 }
 
 #name {
-  margin-top: 200px;
-  margin-left: 20px;
   width: 75%;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 64px;
+  font-size: 3rem;
+  font-weight: 700;
   line-height: 1em;
 }
 #job {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 40px;
+  font-size: 1.5rem;
+  font-weight: 500;
   margin-top: 15px;
-  margin-left: 20px;
   color: #343a40;
 }
 #connect {
-  font-family: "Nunito Sans", sans-serif;
-  margin-left: 20px;
-  margin-top: 20px;
   font-size: 24px;
+  margin-top: auto;
 }
 #bio {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 24px;
+  font-size: 1rem;
   margin-top: 15px;
-  margin-left: 20px;
   color: #343a40;
 }
+
 a {
   text-decoration: none;
   color: inherit;
