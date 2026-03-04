@@ -8,30 +8,52 @@
 
 html, body {
   background-color: #81b29a;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 img {
   object-fit: cover;
   width: 100%;
-  border-radius: 50%;
+  aspect-ratio: 3 / 4;
+  border-radius: 6px;
+  transform: rotate(-2deg);
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: rotate(0deg);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 #landing {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: stretch;
-  row-gap: 20px;
   width: 75%;
-  height: 85%;
   padding-left: 5%;
   padding-right: 20%;
   padding-top: 5%;
+  padding-bottom: 4%;
 }
 
 #profilePhoto {
   margin-top: 0;
   min-width: 0;
+  max-width: 360px;
 }
 
 #profile {
@@ -41,8 +63,8 @@ img {
 }
 
 #information {
-  flex: 4 1 800px;
-  margin-left: 20px
+  flex: 4 1 300px;
+  margin-left: 36px;
 }
 
 #name {
@@ -50,30 +72,192 @@ img {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1em;
+  letter-spacing: -0.02em;
 }
+
 #job {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  margin-top: 15px;
-  color: #343a40;
+  margin-top: 10px;
+  color: #2d6a4f;
+  letter-spacing: 0.01em;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
+
+#tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #2c3235;
+  letter-spacing: 0.02em;
+}
+
 #connect {
-  font-size: 24px;
+  font-size: 22px;
   margin-top: auto;
+  display: flex;
+  gap: 14px;
 }
+
 #bio {
   font-size: 1rem;
-  margin-top: 15px;
-  color: #343a40;
+  line-height: 1.65;
+  margin-top: 18px;
+  color: #2c3235;
+}
+
+#bio p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+#bio p:last-child {
+  margin-bottom: 0;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.15s ease, opacity 0.15s ease;
 }
+
 a:hover {
   text-decoration: underline;
 }
-#connect a:hover{
-  margin-top: -3px;
+
+#bio a {
+  color: #2d6a4f;
+  font-weight: 500;
+}
+
+#bio a:hover {
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+#connect a {
+  display: inline-block;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+#connect a:hover {
+  transform: translateY(-3px);
+  opacity: 0.7;
+}
+
+/* Selected Work */
+
+#selected-work {
+  position: relative;
+  z-index: 1;
+  padding: 0 20% 6% 5%;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2d6a4f;
+  margin-bottom: 16px;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #2c3235;
+  flex: 1;
+}
+
+.project-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2d6a4f;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.15s ease, opacity 0.15s ease;
+}
+
+.project-link:hover {
+  opacity: 0.75;
+  gap: 10px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #landing {
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding: 8% 6% 6%;
+  }
+
+  #profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex: none;
+  }
+
+  #profilePhoto {
+    width: 80px;
+    min-width: 80px;
+  }
+
+  #connect {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  #information {
+    margin-left: 0;
+    flex: none;
+  }
+
+  #name {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  #selected-work {
+    padding: 0 6% 10%;
+  }
+
+  #projects {
+    grid-template-columns: 1fr 1fr;
+  }
 }
